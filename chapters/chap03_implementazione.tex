@@ -1,0 +1,67 @@
+%!TEX root = ../thesis-main.tex
+\chapter{Analisi e Implementazione}
+\label{chap:implementation}
+
+Questo capitolo descrive le componenti core dell'applicazione: la gestione della mappa, il sistema di gamification e l'integrazione dei sensori.
+
+\section{Mappa Interattiva e Clustering}
+La visualizzazione cartografica è gestita dal widget \texttt{MapWidget}, che integra la libreria \texttt{flutter\_map} \cite{fluttermap}. Per gestire l'elevato numero di marker (animali, piante, sensori) e mantenere fluide le prestazioni, è stato implementato un sistema di clustering tramite il pacchetto \texttt{flutter\_map\_marker\_cluster}.
+
+Il seguente codice mostra come vengono renderizzati i marker per le aree verdi utilizzando i widget nativi di Flutter \cite{flutter}:
+
+\begin{lstlisting}[language=Dart, caption={Rendering dei marker sulla mappa}, label={lst:map_markers}]
+// Esempio estratto da MapWidget
+...widget.greenAreas.map((area) {
+  return Marker(
+    point: area.centerPoint,
+    width: 70,
+    height: 70,
+    child: GestureDetector(
+      onTap: () {
+        showModalBottomSheet(
+          context: context,
+          builder: (context) => GreenAreaDetailSheet(species: area),
+        );
+      },
+      child: Image.asset(area.imagePath),
+    ),
+  );
+})
+\end{lstlisting}
+
+\section{Sistema di Gamification}
+Il cuore dell'esperienza utente è il sistema di scoperta. L'app calcola costantemente la distanza geodetica tra la posizione dell'utente e quella delle specie target.
+
+\subsection{Logica di Scoperta}
+Quando la distanza rilevata è inferiore al parametro \texttt{discoveryRadius}, viene invocato il metodo \texttt{discoverSpecies} nel database helper. L'algoritmo è implementato in Dart \cite{dart} sfruttando la precisione del GPS.
+
+\begin{lstlisting}[language=Dart, caption={Algoritmo di scoperta basato sulla distanza}, label={lst:discovery}]
+void _checkDiscoveries(LatLng userLocation) {
+  // Calcolo distanza
+  final double meters = _distanceCalculator.as(
+      LengthUnit.Meter, userLocation, species.centerPoint);
+
+  if (meters <= species.discoveryRadius) {
+    _triggerDiscovery(user.uid, species);
+  }
+}
+\end{lstlisting}
+
+\subsection{Gestione Utente e Rango}
+Il modello utente (\texttt{UserModel}) calcola dinamicamente il livello e il rango (es. "Guardiano", "Leggenda") in base agli XP accumulati, aggiornando lo stato dell'applicazione in tempo reale.
+
+\section{Integrazione Dati Sensori (IoT)}
+Il servizio \texttt{SensorService} interroga l'API AWS \cite{aws} ed effettua il parsing dei dati JSON ricevuti dalle stazioni di monitoraggio (es. Bellocchio, Foce).
+
+\begin{lstlisting}[language=Dart, caption={Parsing dei dati sensore in Dart}, label={lst:sensor_parsing}]
+final response = await http.post(Uri.parse(_apiUrl), ...);
+
+if (response.statusCode == 200) {
+  final decodedBody = jsonDecode(response.body);
+  // Estrazione valore sensore
+  value = decodedBody['sensorValue'] ?? decodedBody['value'];
+  return MapEntry(sensorName, value ?? "N/D");
+}
+\end{lstlisting}
+
+Questi dati vengono poi presentati all'utente cliccando sulle icone delle stazioni sulla mappa, fornendo un quadro in tempo reale dello stato di salute del Parco.

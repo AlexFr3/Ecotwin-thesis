@@ -1,0 +1,43 @@
+%!TEX root = ../thesis-main.tex
+\chapter{Tecnologie e Strumenti}
+\label{chap:technologies}
+
+Per lo sviluppo del sistema EcoTwin è stato selezionato uno stack tecnologico moderno orientato al mobile cross-platform e al cloud computing.
+
+\section{Sviluppo Mobile: Flutter e Dart}
+Flutter \cite{flutter} è il framework UI di Google per creare applicazioni compilate nativamente, basato sul linguaggio di programmazione Dart \cite{dart}.
+
+\subsection{Architettura a Widget}
+In Flutter, tutto è un widget. L'interfaccia utente è costruita come un albero di widget immutabili. Questo approccio è stato utilizzato per creare componenti riutilizzabili come le \texttt{SpeciesDetailSheet} per i dettagli della fauna.
+
+\subsection{Gestione dello Stato con Riverpod}
+Per gestire lo stato dell'applicazione e le dipendenze, è stato scelto \textbf{Riverpod} \cite{riverpod}. A differenza del classico Provider, Riverpod offre sicurezza a compile-time e una migliore testabilità. Nel progetto, i provider gestiscono:
+\begin{itemize}
+    \item L'autenticazione utente (\texttt{authServiceProvider}).
+    \item I dati in streaming dai sensori (\texttt{sensorsProvider}).
+    \item La posizione dell'utente in tempo reale (\texttt{userPositionProvider}).
+\end{itemize}
+
+\section{Backend e Cloud: Firebase}
+Firebase \cite{firebase} agisce come Backend-as-a-Service (\ac{BaaS}), fornendo un'infrastruttura scalabile senza la necessità di gestire server dedicati.
+
+\subsection{Cloud Firestore}
+Database NoSQL utilizzato per memorizzare:
+\begin{itemize}
+    \item Profili utente e progressi (XP, livello).
+    \item Lista delle specie scoperte (\texttt{visitedSpeciesIds}).
+\end{itemize}
+
+\subsection{Authentication}
+Gestisce il login tramite Email/Password, Google Sign-In e accesso anonimo, riducendo le barriere all'ingresso per i turisti occasionali.
+
+\section{Integrazione IoT e Servizi Esterni}
+
+\subsection{Acquisizione Dati Sensori}
+L'applicazione comunica con un endpoint AWS (Amazon Web Services) \cite{aws} per recuperare i dati dalle centraline idrometeorologiche. Le stazioni monitorano parametri quali livello idrometrico, temperatura e conducibilità.
+
+\subsection{Open-Meteo API}
+Per fornire contesto meteorologico ai POI, viene utilizzata l'API open-source Open-Meteo \cite{openmeteo}, che fornisce dati su temperatura e condizioni del cielo basati sulle coordinate GPS.
+
+\section{Geolocalizzazione e Mappe}
+La libreria \texttt{flutter\_map} \cite{fluttermap}, basata su OpenStreetMap \cite{openstreetmap}, gestisce il rendering cartografico. Il pacchetto \texttt{geolocator} permette il calcolo delle distanze per la logica di "scoperta" (geofencing) quando l'utente si avvicina a un animale o a una pianta.
