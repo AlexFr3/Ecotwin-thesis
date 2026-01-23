@@ -55,12 +55,33 @@ Il sistema idrologico è governato da una fitta rete di canali artificiali di bo
 
 \subsection{La gestione del territorio e gli strumenti di tutela internazionale}
 Il riconoscimento quale Riserva di Biosfera MAB UNESCO sancisce l'eccezionalità di un territorio in cui obiettivi di tutela ambientale e sviluppo socio-economico devono essere integrati in un'unica strategia di lungo periodo \cite{biosfera_mab_reason}. La governance è articolata tra l'Ente di Gestione per i Parchi e la Biodiversità Delta del Po, le Regioni Emilia-Romagna e Veneto e i Comuni ricompresi nell’area del Contratto di Foce, che condividono strumenti pianificatori e misure di gestione coordinate.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/green_area/MappaParcoDeltaDelPo.pdf} 
+    \caption[Parco del Delta del Po]{(Fonte: Riserva di Biosfera Delta del Po MAB UNESCO (biosferadeltapo.it))}
+    \label{fig:Mappa parco del Delta del Po}
+\end{figure}
 
 In questo quadro istituzionale, la sfida principale consiste nel trovare un equilibrio tra pesca e acquacoltura (in particolare la molluschicoltura), agricoltura intensiva, attività turistiche e necessità di conservazione degli habitat prioritari, in un contesto già reso fragile dai cambiamenti climatici e dalla subsidenza \cite{sviluppo_sostenibile}. Ciò rende particolarmente rilevante l’adozione di strumenti innovativi per monitorare lo stato dell’ecosistema e orientare la fruizione verso forme più consapevoli.
 
 \section{Biodiversità, pressioni antropiche e Smart Tourism}
 La biodiversità del Delta del Po, e in particolare delle Valli di Comacchio, rappresenta un patrimonio naturalistico di rilievo internazionale, ma è al tempo stesso esposta a una serie di pressioni antropiche che ne mettono alla prova la resilienza \cite{delta_species}. L’incremento dei flussi turistici, l’intensificazione delle pratiche agricole e le trasformazioni idromorfologiche contribuiscono a modificare gli equilibri ecologici delle lagune e delle zone umide interne.
-
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/green_area/vallidicomacchio.jpg}
+        \label{fig:vallidicomacchio}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/green_area/vallidicomacchio2.jpg}
+        \label{fig:vallidicomacchio2}
+    \end{subfigure}
+    \caption[Valli di Comacchio]{(Fonte: Gettyimages, img. Royalty-Free)}
+    \label{fig:Comacchio}
+\end{figure}
 \subsection{Flora specializzata e habitat di transizione}
 La vegetazione del delta è dominata da flora tipica degli ambienti salmastri, adattate a condizioni di stress salino estremo tipiche degli ambienti di transizione tra acqua dolce e marina. Oltre alle salicornie, l'ecosistema lagunare ospita specie come \textit{Limonium serotinum}, \textit{Inula crithmoides} e \textit{Juncus maritimus}, che formano successioni vegetazionali lungo gradienti di idroperiodo e salinità \cite{scienza_della_vegetazione}.
 
@@ -99,11 +120,30 @@ La \textit{Gamification}, intesa come uso di elementi di game design in contesti
 \subsection{Il Digital Twin applicato agli ecosistemi lagunari}
 Il paradigma del \textit{Digital Twin} nasce in ambito industriale per descrivere modelli digitali dinamici in grado di riflettere in tempo reale lo stato di un sistema fisico complesso \cite{digital_twin_env}. Applicato agli ecosistemi lagunari, il concetto di gemello digitale permette di collegare dati oggettivi provenienti da sensori idrografici (livello dei canali, salinità, temperatura dell’acqua) con rappresentazioni accessibili all’utente finale, favorendo la comprensione immediata degli equilibri ambientali e delle loro variazioni nel tempo.
 
+\section{Analisi dello stato dell'arte e soluzioni esistenti}
+\label{sec:state_of_art}
+Per comprendere appieno il posizionamento di una nuova soluzione digitale come \textit{EcoSpot}, è fondamentale analizzare il panorama delle applicazioni esistenti dedicate al turismo naturalistico e al monitoraggio ambientale. Attualmente, le soluzioni disponibili possono essere classificate in tre macro-categorie.
+
+\subsection{Piattaforme di Citizen Science pura}
+Applicazioni come \textit{iNaturalist} rappresentano lo standard globale per la raccolta di dati sulla biodiversità \cite{inaturalist_ref}. Queste piattaforme permettono agli utenti di caricare foto e identificare specie, generando enormi database utili alla ricerca scientifica. Tuttavia, il loro approccio è spesso ``data-centric'': l'interfaccia è complessa per l'utente occasionale, manca una componente ludica strutturata e non vi è integrazione con i dati ambientali non vivent (come i livelli idrici o il meteo locale), elementi cruciali per la fruizione del Delta del Po.
+
+\subsection{Guide turistiche generaliste}
+Applicazioni come \textit{Google Maps}, \textit{TripAdvisor} o le app turistiche regionali offrono eccellenti funzionalità di navigazione e recensione dei servizi (ristorazione, alloggio). Tuttavia, queste soluzioni mancano di granularità ecologica: un sentiero in zona A (tutela integrale) viene spesso trattato come una qualsiasi attrazione turistica, senza fornire all'utente il contesto comportamentale necessario o le informazioni sulla fauna visibile in quella specifica stagione.
+
+\subsection{Applicazioni verticali di parco}
+Esistono diverse applicazioni sviluppate specificamente per singoli parchi nazionali o regionali. 
+L'analisi di questi software evidenzia spesso due criticità: la scarsa manutenzione nel tempo 
+(molte app non vengono aggiornate dopo la fine del finanziamento del progetto) e la mancanza di interattività in tempo reale. 
+Spesso si configurano come brochure digitali statiche, prive di integrazione con sensori IoT o meccaniche di coinvolgimento attivo dell'utente.
+\textit{EcoSpot} si inserisce in questo vuoto funzionale, 
+proponendo un modello ibrido che unisce l'immediatezza di consultazione delle guide turistiche, 
+il rigore della Citizen Science e l'accessibilità in tempo reale ai dati di monitoraggio.
+
 \section{EcoSpot: una guida interattiva}
 In questo contesto teorico e territoriale si inserisce \textit{EcoSpot}, 
 un’applicazione mobile che si propone come guida digitale interattiva per l’esplorazione e la valorizzazione dell’ecosistema del Delta del Po, 
 con particolare attenzione alle Valli di Comacchio e alle aree frequentate dal fenicottero rosa. 
-L’obiettivo è supportare un modello di turismo lento e consapevole, coniugando scoperta naturalistica, 
+L’obiettivo è supportare un modello di Ecoturismo, coniugando scoperta naturalistica, 
 monitoraggio ambientale e meccaniche ludiche orientate all’educazione ecologica \cite{turismo_deltadelpo}.
 
 \subsection{Visione e obiettivi dell’applicazione}
