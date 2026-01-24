@@ -6,7 +6,7 @@
 Il Parco del Delta del Po costituisce la più vasta zona umida d’Italia e una delle aree europee a più alta biodiversità, grazie al mosaico di lagune salmastre, valli da pesca, canneti, pinete costiere, dune e zone agricole. Questa varietà di habitat sostiene un numero elevatissimo di specie vegetali e animali, motivo per cui l’area è riconosciuta come Riserva di Biosfera MAB UNESCO \cite{unesco_po_official}.
 
 Dal punto di vista faunistico, il Delta ospita oltre 300--350 specie di uccelli tra nidificanti, svernanti e migratori, rendendolo uno dei siti più importanti d’Europa per l’avifauna acquatica e una meta d'eccellenza per il birdwatching \cite{delta_birdwatching}. Tra le specie più caratteristiche figurano i fenicotteri rosa (\textit{Phoenicopterus roseus}), divenuti simbolo del paesaggio lagunare, insieme ad aironi cenerini, cormorani, cavalieri d’Italia, avocette, falchi di palude e molte altre specie legate alle zone umide \cite{fenicottero_pdf}.
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
@@ -56,7 +56,7 @@ Il sistema idrologico è governato da una fitta rete di canali artificiali di bo
 \subsection{Vulnerabilità idraulica: il problema del cuneo salino}
 Un fattore critico per la sopravvivenza degli habitat del Delta è l'intrusione salina, ovvero la risalita delle acque marine lungo l'alveo fluviale durante i periodi di magra. Negli ultimi anni, a causa della siccità prolungata e dell'abbassamento delle portate del fiume Po, il cuneo salino è risalito per oltre 30-40 km dalla foce \cite{cuneo_salino_report}.
 
-Questo fenomeno altera drasticamente la chimica delle acque, minacciando l'agricoltura e modificando la distribuzione delle specie ittiche e dell'avifauna. La necessità di monitorare parametri come la conducibilità elettrica (proxy della salinità) non è quindi solo un'esigenza scientifica, ma diventa un'informazione di interesse pubblico per comprendere le mutazioni del paesaggio in tempo reale. L'integrazione di questi dati in applicazioni consumer permette di rendere visibile l'invisibile, sensibilizzando i visitatori su dinamiche complesse spesso ignorate dal turismo di massa.
+Questo fenomeno altera drasticamente la chimica delle acque, minacciando l'agricoltura e modificando la distribuzione delle specie ittiche e dell'avifauna. La necessità di monitorare parametri come la conducibilità elettrica (Indicatore della salinità) non è quindi solo un'esigenza scientifica, ma diventa un'informazione di interesse pubblico per comprendere le mutazioni del paesaggio in tempo reale. L'integrazione di questi dati in applicazioni consumer permette di rendere visibile l'invisibile, sensibilizzando i visitatori su dinamiche complesse spesso ignorate dal turismo di massa.
 \subsection{La gestione del territorio e gli strumenti di tutela internazionale}
 Il riconoscimento quale Riserva di Biosfera MAB UNESCO sancisce l'eccezionalità di un territorio in cui obiettivi di tutela ambientale e sviluppo socio-economico devono essere integrati in un'unica strategia di lungo periodo \cite{biosfera_mab_reason}. La governance è articolata tra l'Ente di Gestione per i Parchi e la Biodiversità Delta del Po, le Regioni Emilia-Romagna e Veneto e i Comuni ricompresi nell’area del Contratto di Foce, che condividono strumenti pianificatori e misure di gestione coordinate.
 \begin{figure}[H]
@@ -120,7 +120,7 @@ Le Valli di Comacchio costituiscono il più vasto complesso di zone umide salmas
 
 All’interno di questo contesto si inseriscono le Saline di Comacchio, un’area umida di elevato valore naturalistico dove la gestione dei livelli idrici e 
 della salinità ha favorito, storicamente, sia la produzione del sale sia la presenza di grandi contingenti di uccelli acquatici, tra cui il fenicottero rosa 
-e numerose specie di limicoli \cite{valli_comacchio_ambiente}. Le saline rappresentano oggi uno dei principali hotspot per il birdwatching dell’area, 
+e numerose specie di limicoli \cite{valli_comacchio_ambiente}. Anche le saline rappresentano oggi uno dei principali hotspot per il birdwatching dell’area, 
 grazie alla presenza di argini sopraelevati e punti di osservazione schermati.
 \begin{figure}[htbp]
     \centering
@@ -212,13 +212,14 @@ Il paradigma del \textit{Digital Twin} nasce in ambito industriale per descriver
 
 \section{Analisi dello stato dell'arte e soluzioni esistenti}
 \label{sec:state_of_art}
-Per comprendere appieno il posizionamento di una nuova soluzione digitale come \textit{EcoSpot}, è fondamentale analizzare il panorama delle applicazioni esistenti dedicate al turismo naturalistico e al monitoraggio ambientale. Attualmente, le soluzioni disponibili possono essere classificate in tre macro-categorie.
+Per comprendere appieno il posizionamento di una nuova soluzione digitale, è fondamentale analizzare il panorama delle applicazioni esistenti dedicate al turismo naturalistico e al monitoraggio ambientale. Attualmente, le soluzioni disponibili possono essere classificate in tre macro-categorie.
 
 \subsection{Piattaforme di Citizen Science pura}
 Applicazioni come \textit{iNaturalist} rappresentano lo standard globale per la raccolta di dati sulla biodiversità \cite{inaturalist_ref}. Queste piattaforme permettono agli utenti di caricare foto e identificare specie, generando enormi database utili alla ricerca scientifica. Tuttavia, il loro approccio è spesso ``data-centric'': l'interfaccia è complessa per l'utente occasionale, manca una componente ludica strutturata e non vi è integrazione con i dati ambientali non vivent (come i livelli idrici o il meteo locale), elementi cruciali per la fruizione del Delta del Po.
 
 \subsection{Guide turistiche generaliste}
-Applicazioni come \textit{Google Maps}, \textit{TripAdvisor} o le app turistiche regionali offrono eccellenti funzionalità di navigazione e recensione dei servizi (ristorazione, alloggio). Tuttavia, queste soluzioni mancano di granularità ecologica: un sentiero in zona A (tutela integrale) viene spesso trattato come una qualsiasi attrazione turistica, senza fornire all'utente il contesto comportamentale necessario o le informazioni sulla fauna visibile in quella specifica stagione.
+Applicazioni come \textit{Google Maps}, \textit{TripAdvisor} o le app turistiche regionali offrono eccellenti funzionalità di navigazione e recensione dei servizi 
+(ristorazione, alloggio). Tuttavia, queste soluzioni mancano di specificità ambientale: un sentiero in zona A (tutela integrale) viene spesso trattato come una qualsiasi attrazione turistica, senza fornire all'utente il contesto comportamentale necessario o le informazioni sulla fauna visibile in quella specifica stagione.
 
 \subsection{Applicazioni verticali di parco}
 Esistono diverse applicazioni sviluppate specificamente per singoli parchi nazionali o regionali. 
