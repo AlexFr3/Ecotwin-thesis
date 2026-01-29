@@ -272,7 +272,7 @@ rendendo ``visibile'' ciò che spesso rimane nascosto sotto la superficie dell'a
 \label{sec:state_of_art}
 Per comprendere appieno il posizionamento di una nuova soluzione digitale, è fondamentale analizzare il panorama delle applicazioni esistenti dedicate al turismo naturalistico e al monitoraggio ambientale. Attualmente, le soluzioni disponibili possono essere classificate in tre macro-categorie.
 
-\subsection{Piattaforme di Citizen Science pura}
+\subsection{Piattaforme di Citizen Science}
 Applicazioni come \textit{iNaturalist} rappresentano lo standard globale per la raccolta di dati sulla biodiversità \cite{inaturalist_ref}. Queste piattaforme permettono agli utenti di caricare foto e identificare specie, generando enormi database utili alla ricerca scientifica. Tuttavia, il loro approccio è spesso ``data-centric'': l'interfaccia è complessa per l'utente occasionale, manca una componente ludica strutturata e non vi è integrazione con i dati ambientali non vivent (come i livelli idrici o il meteo locale), elementi cruciali per la fruizione del Delta del Po.
 
 \subsection{Guide turistiche generaliste}
@@ -288,41 +288,46 @@ Spesso si configurano come brochure digitali statiche, prive di integrazione con
 proponendo un modello ibrido che unisce l'immediatezza di consultazione delle guide turistiche, 
 il rigore della Citizen Science e l'accessibilità in tempo reale ai dati di monitoraggio.
 
-\section{EcoSpot: una guida interattiva}
-In questo contesto teorico e territoriale si inserisce \textit{EcoSpot}, 
-un’applicazione mobile che si propone come guida digitale interattiva per l’esplorazione e la valorizzazione dell’ecosistema del Delta del Po, 
-con particolare attenzione alle Valli di Comacchio e alle aree frequentate dal fenicottero rosa. 
-L’obiettivo è supportare un modello di Ecoturismo, coniugando scoperta naturalistica, 
-monitoraggio ambientale e meccaniche ludiche orientate all’educazione ecologica \cite{turismo_deltadelpo}.
+\subsection{Il progetto DISCOV.ER}
+Un esempio applicativo di rilievo, che integra le tecnologie descritte in questo capitolo, è rappresentato dal progetto \textit{DISCOV.ER} (Digital Twin and Citizen Science for the Sustainability of Areas of Natural and Tourist Interest).
+Presentato alla conferenza internazionale \textit{GoodIT '25}, il progetto propone un approccio innovativo per la gestione e la valorizzazione delle aree di interesse naturale e turistico \cite{2025discover}.
 
-\subsection{Visione e obiettivi dell’applicazione}
-EcoSpot aspira al paradigma del ``gemello digitale'' dell’ambiente reale: accompagna l’utente nella scoperta fisica del territorio,
- permettendogli di esplorare habitat, conoscere specie e comprendere lo stato di salute dell’ecosistema attraverso un’interfaccia unificata \cite{digital_twin_env}. L’app è pensata per turisti, famiglie, scuole e appassionati di birdwatching che desiderano un’esperienza immersiva e informata nel Delta del Po.
+L'obiettivo principale di DISCOV.ER è sfruttare la sinergia tra il paradigma del \textit{Digital Twin} e la metodologia della \textit{Citizen Science} per promuovere la sostenibilità ambientale. Il sistema si basa sull'idea che un gemello digitale non debba essere solo una replica statica dell'ambiente, ma uno strumento dinamico alimentato sia da dati provenienti da sensori IoT, sia dalle osservazioni raccolte direttamente dai cittadini e dai turisti.
+Questa integrazione permette di:
+\begin{itemize}
+    \item \textbf{Monitorare lo stato dell'ambiente:} Utilizzando dati eterogenei per rilevare in tempo reale cambiamenti o criticità nell'ecosistema.
+    \item \textbf{Coinvolgere la comunità:} Trasformando i visitatori in partecipanti attivi (\textit{human-as-a-sensor}), aumentando la loro consapevolezza ecologica e il senso di appartenenza al territorio.
+    \item \textbf{Supportare una gestione adattativa:} Permettendo agli enti di rispondere rapidamente ai cambiamenti rilevati nel sistema socio-ecologico attraverso strumenti analitici avanzati.
+\end{itemize}
 
-\subsection{Pilastri progettuali: biodiversità, esplorazione, dati ambientali, gamification}
-La progettazione di EcoSpot si fonda su quattro pilastri principali, strettamente interconnessi.
+Il progetto DISCOV.ER dimostra come l'integrazione fluida (\textit{seamless integration}) tra indagine scientifica e coinvolgimento sociale possa generare valore sia per la ricerca che per la tutela del patrimonio naturale, ponendosi come riferimento diretto per lo sviluppo di soluzioni come EcoSpot.
+\section{Obiettivi del progetto di tesi}
+\textit{EcoSpot} si inserisce in questo vuoto funzionale, proponendo un modello ibrido che unisce l’immediatezza di consultazione delle guide turistiche, 
+il rigore della \textit{Citizen Science} e l’accessibilità in tempo reale ai dati di monitoraggio. 
+In questo contesto teorico e territoriale, l'applicazione si configura come una guida digitale interattiva per l’esplorazione e la valorizzazione 
+dell’ecosistema del Delta del Po, con particolare attenzione alle Valli di Comacchio e alle aree frequentate dal fenicottero rosa.
 
-Il primo pilastro è la \textbf{biodiversità come collezione digitale}: l’app mette a disposizione un catalogo strutturato di specie suddivise in categorie 
-(uccelli, mammiferi, pesci, aree verdi), in cui ogni scheda fornisce nome comune e scientifico, descrizione sintetica, habitat naturale e curiosità, 
-trasformando l’osservazione naturalistica in un’attività di scoperta guidata.
+L’obiettivo principale è supportare un modello di Ecoturismo avanzato, coniugando scoperta naturalistica, monitoraggio ambientale e meccaniche ludiche 
+orientate all’educazione ecologica \cite{turismo_deltadelpo}.
+EcoSpot aspira ad accompagnare l’utente nella scoperta fisica del territorio, permettendogli di esplorare habitat, conoscere specie e comprendere lo 
+stato di salute dell’ecosistema attraverso un’interfaccia unificata. L’app è pensata per turisti, famiglie, scuole e appassionati di \textit{birdwatching} 
+che desiderano un’esperienza immersiva e informata nel Delta del Po.
+\subsection{Obiettivi progettuali}
+La progettazione di EcoSpot è guidata da quattro obiettivi, volti a coniugare l'esperienza turistica con la consapevolezza ecologica.
 
-Il secondo pilastro è l’\textbf{esplorazione attiva e il turismo dolce}: grazie alla geolocalizzazione, 
-l’utente è incentivato a muoversi fisicamente sul territorio. Per ``scoprire'' una specie o un’area verde e guadagnare punti esperienza è necessario 
-avvicinarsi entro un certo raggio a luoghi reali come valli, argini o punti di osservazione, promuovendo un'esplorazione lenta e rispettosa degli habitat.
+\begin{itemize}
+    \item \textbf{Divulgazione del patrimonio naturalistico:} l'obiettivo è diffondere la conoscenza della biodiversità locale attraverso una \textit{collezione digitale} strutturata. L'applicazione offre un catalogo dettagliato di specie (suddivise in categorie come uccelli, mammiferi, pesci e aree verdi), corredato da nomi scientifici, descrizioni e habitat, trasformando la semplice osservazione in un percorso di scoperta guidata e consapevole.
 
-Il terzo pilastro riguarda il \textbf{“polso” dell’ecosistema in tempo reale}: l’app aggrega dati eterogenei per offrire un quadro completo. 
-Da un lato, si interfaccia con la rete di sensori \ac{IoT}. del progetto Discover-ER \cite{discover_er_api} per i parametri idrografici puntuali 
-(livello idrometrico, temperatura e conducibilità dell’acqua); dall'altro, integra il servizio Open-Meteo \cite{open_meteo_api} 
-per fornire le condizioni e le previsioni meteorologiche locali. In questo modo, fattori normalmente invisibili o dispersi diventano parte integrante 
-dell’esperienza di visita unificata.
+    \item \textbf{Incentivazione del turismo lento:} il sistema mira a favorire un'esplorazione rispettosa del territorio sfruttando meccaniche \textit{location-based}. Grazie alla geolocalizzazione, l'utente è incentivato a raggiungere fisicamente luoghi reali (valli, argini, punti di osservazione) per sbloccare i contenuti, promuovendo così una mobilità dolce e un presidio attivo degli habitat, in contrapposizione al turismo di massa.
 
-Il quarto pilastro è la \textbf{gamification educativa}: in accordo con la definizione accademica di utilizzo di elementi di gioco in contesti non ludici 
-\cite{gamification_def}, il sistema utilizza XP, livelli e badge per incoraggiare l’utente a esplorare nuovi luoghi e interagire con i dati ambientali.
-La progressione da semplice ``Esploratore'' a ``Naturalista'', ``Guardiano'' e infine ``Leggenda del Delta'' è pensata per rafforzare il senso di appartenenza 
- al territorio e la responsabilità verso la sua tutela.
+    \item \textbf{Monitoraggio ambientale integrato:} il progetto intende rendere accessibili parametri ecologici complessi tramite l'aggregazione di dati 
+    in tempo reale. L'app si interfaccia con le \ac{API} del progetto DISCOV.ER \cite{discover_er_api} per i dati idrografici (livello, temperatura, 
+    conducibilità) e integra il servizio Open-Meteo \cite{open_meteo_api} per le condizioni atmosferiche, rendendo visibili all'utente fattori altrimenti 
+    impercettibili dell'ecosistema.
 
-\subsection{Impatto atteso sull’engagement e sulla consapevolezza ecologica}
-L’integrazione di questi quattro pilastri mira ad aumentare l’engagement dei visitatori, 
+    \item \textbf{Incremento del coinvolgimento:} l'ultimo obiettivo è massimizzare la partecipazione dell'utente attraverso la \textit{gamification}. In linea con la definizione accademica \cite{gamification_def}e l'uso di elementi ludici come punti esperienza (XP), livelli (da ``Esploratore'' a ``Leggenda del Delta'') serve a rafforzare il senso di appartenenza al territorio e a stimolare comportamenti virtuosi di tutela ambientale.
+\end{itemize}
+L’integrazione di questi quattro pilastri mira ad aumentare il coinvolgimento dei visitatori, 
 offrendo un’esperienza che combina contenuti informativi, esplorazione fisica e feedback immediati sulle pratiche sostenibili \cite{smart_tourism}. 
 Al tempo stesso, la possibilità di accedere a dati ambientali in tempo quasi reale e di collegarli alle osservazioni sul campo contribuisce a sviluppare 
 una maggiore consapevolezza ecologica, mostrando in modo concreto la fragilità e il valore degli ecosistemi lagunari. In questo senso, 
